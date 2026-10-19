@@ -1,0 +1,49 @@
+EVANGELIST EYU WEBSITE: UPLOAD TO GITHUB
+=========================================
+
+What is in this package
+  Evangelist-Eyu-site/   the website (index.html is only ~59 KB now; images, video,
+                         CSS and JavaScript are separate files inside it)
+  push_to_github.py      the uploader (needs only Python 3, nothing to install)
+
+STEP 1: Make a GitHub token (2 minutes)
+  Easiest (classic token):
+    GitHub > your photo > Settings > Developer settings > Personal access tokens
+    > Tokens (classic) > Generate new token (classic)
+    Note: "eyu upload"   Expiration: 7 days   Tick the box:  repo
+    Generate, then COPY the token (it starts with ghp_). You see it only once.
+  Or fine-grained token: Repository access = only "Evangelist-Eyu";
+    Permissions > Contents = Read and write  (and Pages = Read and write, optional).
+  Never send this token to anyone, not even in a chat.
+
+STEP 2: Install Python 3 (skip if you have it)
+  Download from https://www.python.org/downloads/  (Windows: tick "Add Python to PATH").
+
+STEP 3: Run the uploader
+  Unzip this package. Keep push_to_github.py NEXT TO the Evangelist-Eyu-site folder.
+  Open a terminal / Command Prompt in that folder, then run:
+      python push_to_github.py        (Mac/Linux: python3 push_to_github.py)
+  Paste the token when asked (the letters stay hidden, that is normal) and press Enter.
+  You will see each file upload, then "Done".
+
+STEP 4: Check GitHub Pages
+  The script tries to switch it on. To confirm, open:
+    https://github.com/djjo0740-png/Evangelist-Eyu/settings/pages
+  Under "Build and deployment": Source = "Deploy from a branch",
+  Branch = main, Folder = / (root). Save.
+  Your site (1 to 3 minutes after the first push):
+    https://djjo0740-png.github.io/Evangelist-Eyu/
+
+STEP 5: Delete the token
+  Settings > Developer settings > Personal access tokens > Delete.
+
+Updating the site later
+  Change files inside Evangelist-Eyu-site, run the script again. Only changed files
+  are changed in the new commit.
+
+If something goes wrong
+  "401"        token wrong or expired: make a new one.
+  "403"/"404"  token cannot write to the repository: redo STEP 1 (tick "repo").
+  Blank page   wait 3 minutes, press Ctrl+F5, and check STEP 4 settings.
+  Social-share preview image uses https://djjo0740-png.github.io/Evangelist-Eyu/img/logo.png
+  (change it in index.html if you later use your own domain).
